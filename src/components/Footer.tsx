@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 
+const currentYear = new Date().getFullYear()
+
 export function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-slate-50">
@@ -35,7 +37,7 @@ export function Footer() {
           </nav>
         </div>
         <div className="mt-12 border-t border-slate-200 pt-8 text-center text-sm text-slate-500">
-          <p>&copy; {new Date().getFullYear()} SwiftCart. Built for learning.</p>
+          <p>&copy; {currentYear} SwiftCart. Built for learning.</p>
         </div>
       </div>
     </footer>
