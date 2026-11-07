@@ -1,32 +1,55 @@
-# React + TypeScript + Vite
+# SwiftCart
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A small e-commerce demo built with React 19, TypeScript, Vite, and Tailwind CSS v4.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Client-side routing with React Router v7
+- Home, product listing, product detail, cart, and checkout pages
+- Category filtering via the `?category=` query parameter
+- Cart state with quantity controls and `localStorage` persistence
+- Simulated checkout with an order confirmation state
+- Responsive, accessible UI built with Tailwind CSS
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19 + TypeScript 6
+- Vite 8
+- Tailwind CSS v4 (`@tailwindcss/vite`)
+- React Router v7
+- oxlint
 
-## Expanding the Oxlint configuration
+## Getting Started
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Open the URL printed by Vite (typically http://localhost:5173).
+
+## Scripts
+
+| Command             | Purpose                       |
+| ------------------- | ----------------------------- |
+| `npm run dev`       | Start the development server  |
+| `npm run build`     | Type-check and build for prod |
+| `npm run typecheck` | Type-check without emitting   |
+| `npm run lint`      | Run oxlint                    |
+| `npm run preview`   | Preview the production build  |
+
+## Project Structure
+
+```
+src/
+├─ components/   Header, Footer, Layout
+├─ context/      Cart context and provider
+├─ data/         Mock product data
+├─ pages/        Route pages
+├─ main.tsx      App entry point
+└─ router.tsx    Route definitions
+```
+
+## Notes
+
+Product data is mocked locally; there is no backend or real payment processing. See `part1.md` for a detailed log of the work completed.
