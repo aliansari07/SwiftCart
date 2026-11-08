@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { useCart } from '../context/useCart'
 
 export function Cart() {
-  const { items, count, subtotal, updateQuantity, removeItem } = useCart()
+  const { items, count, subtotal, updateQuantity, removeItem, clearCart } = useCart()
   const shipping = subtotal === 0 || subtotal >= 50 ? 0 : 5
   const total = subtotal + shipping
 
@@ -22,10 +22,21 @@ export function Cart() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-      <h1 className="text-3xl font-bold tracking-tight text-slate-900">Shopping Cart</h1>
-      <p className="mt-2 text-slate-500">
-        {count} {count === 1 ? 'item' : 'items'} in your cart.
-      </p>
+      <div className="flex items-center justify-between gap-4">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight text-slate-900">Shopping Cart</h1>
+          <p className="mt-2 text-slate-500">
+            {count} {count === 1 ? 'item' : 'items'} in your cart.
+          </p>
+        </div>
+        <button
+          type="button"
+          onClick={clearCart}
+          className="text-sm font-medium text-slate-500 hover:text-red-600 transition-colors"
+        >
+          Clear cart
+        </button>
+      </div>
 
       <div className="mt-8 grid gap-8 lg:grid-cols-3">
         <div className="space-y-4 lg:col-span-2">
