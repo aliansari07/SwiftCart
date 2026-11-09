@@ -2,9 +2,8 @@ import { Link } from 'react-router-dom'
 import { useCart } from '../context/useCart'
 
 export function Cart() {
-  const { items, count, subtotal, updateQuantity, removeItem, clearCart } = useCart()
-  const shipping = subtotal === 0 || subtotal >= 50 ? 0 : 5
-  const total = subtotal + shipping
+  const { items, count, subtotal, shipping, total, updateQuantity, removeItem, clearCart } =
+    useCart()
 
   if (items.length === 0) {
     return (
