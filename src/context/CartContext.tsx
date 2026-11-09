@@ -5,6 +5,8 @@ import { CartContext } from './cart-context'
 import type { CartContextValue, CartItem } from './cart-context'
 
 const STORAGE_KEY = 'swiftcart-cart'
+const FREE_SHIPPING_THRESHOLD = 50
+const SHIPPING_COST = 5
 
 function loadCart(): CartItem[] {
   if (typeof window === 'undefined') return []
@@ -32,10 +34,14 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }, [items])
 
   const value = useMemo<CartContextValue>(() => {
+    const subtotal = items.reduce((total, item) => total + item.product.price * item.quantity, 0)
+    const shipping = subtotal === 0 || subtotal >= FREE_SHIPPING_THRESHOLD ? 0 : SHIPPING_COST
     return {
       items,
       count: items.reduce((total, item) => total + item.quantity, 0),
-      subtotal: items.reduce((total, item) => total + item.product.price * item.quantity, 0),
+      subtotal,
+      shipping,
+      total: subtotal + shipping,
       addItem: (productId, quantity = 1) => {
         const product = getProduct(productId)
         if (!product) return
