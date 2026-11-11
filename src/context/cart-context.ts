@@ -1,11 +1,17 @@
 import { createContext } from 'react'
 import type { Product } from '../data/products'
 
+/**
+ * An item in the shopping cart, consisting of a product and its quantity.
+ */
 export interface CartItem {
   product: Product
   quantity: number
 }
 
+/**
+ * The value provided by the CartProvider via context.
+ */
 export interface CartContextValue {
   items: CartItem[]
   count: number
