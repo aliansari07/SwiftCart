@@ -1,6 +1,11 @@
 import { useContext } from 'react'
 import { CartContext } from './cart-context'
 
+/**
+ * Retrieves the cart context value.
+ * Must be used within a CartProvider.
+ * @returns The cart context value containing items, count, subtotal, shipping, total, and actions
+ */
 export function useCart() {
   const context = useContext(CartContext)
   if (!context) {
