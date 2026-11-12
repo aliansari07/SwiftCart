@@ -32,6 +32,7 @@ export function Cart() {
           type="button"
           onClick={clearCart}
           className="text-sm font-medium text-slate-500 hover:text-red-600 transition-colors"
+          aria-label="Clear cart"
         >
           Clear cart
         </button>
@@ -110,6 +111,7 @@ export function Cart() {
           <Link
             to="/checkout"
             className="mt-6 block rounded-lg bg-brand-600 px-6 py-3 text-center text-base font-medium text-white hover:bg-brand-700 transition-colors"
+            aria-label="Proceed to checkout"
           >
             Proceed to Checkout
           </Link>

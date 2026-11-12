@@ -3,8 +3,9 @@ import type { CartContextValue } from './cart-context'
 import { CartContext } from './cart-context'
 
 /**
- * Retrieves cart state from the CartContext.
- * Throws if used outside of a CartProvider.
+ * Retrieves the cart context value.
+ * Must be used within a CartProvider.
+ * @returns The cart context value containing items, count, subtotal, shipping, total, and actions
  */
 export function useCart(): CartContextValue {
   const context = useContext(CartContext)
