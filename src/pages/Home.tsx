@@ -21,34 +21,37 @@ export function Home() {
       <div className="mt-20 grid gap-8 md:grid-cols-3">
         <FeatureCard
           icon={
-            <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+<svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+              <title>Fast Shipping</title>
               <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
               <path d="M3.27 6.96L12 12.01l8.73-5.05" />
               <path d="M12 22.08V12" />
-            </svg>
+</svg>
           }
           title="Fast Shipping"
           description="Free shipping on orders over $50. Delivered to your door in 2-3 business days."
         />
         <FeatureCard
           icon={
-            <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+<svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+              <title>Secure Payments</title>
               <rect x="2" y="4" width="20" height="16" rx="2" />
               <path d="M2 8h20" />
               <path d="M10 12v4" />
               <path d="M14 12v4" />
-            </svg>
+</svg>
           }
           title="Secure Payments"
           description="Your payment information is encrypted and secure. We support all major cards."
         />
         <FeatureCard
           icon={
-            <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+<svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+              <title>Easy Returns</title>
               <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4" />
               <path d="M3 5v14a2 2 0 0 0 2 2h16v-5" />
               <path d="M18 12a2 2 0 0 0 0 4h4v-4Z" />
-            </svg>
+</svg>
           }
           title="Easy Returns"
           description="30-day hassle-free returns. If you don't love it, send it back."
