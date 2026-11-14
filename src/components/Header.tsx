@@ -21,7 +21,7 @@ export function Header() {
           <Link to="/products" className="text-sm font-medium text-slate-700 hover:text-brand-600 transition-colors">Products</Link>
           <Link to="/cart" className="relative text-sm font-medium text-slate-700 hover:text-brand-600 transition-colors">
             Cart
-            <span className="absolute -top-2 -right-6 flex h-5 w-5 items-center justify-center rounded-full bg-brand-600 text-xs font-bold text-white">
+            <span className="absolute -top-2 -right-6 flex h-5 w-5 items-center justify-center rounded-full bg-brand-600 text-xs font-bold text-white" aria-label={`Cart (${count} items)`}>
               {count}
             </span>
           </Link>
